@@ -1,0 +1,250 @@
+/* ===== GitHub Markdown PDF Styling ===== */
+
+/* Base Layout (GitHub-like text, width, colors) */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #24292e;
+    background-color: #ffffff;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Headers (Match GitHub's Heading Sizes) */
+h1 {
+    font-size: 2em;
+    font-weight: 600;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #d0d7de;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid #d0d7de;
+}
+
+h3 {
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+h6 {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #57606a;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 16px;
+}
+
+/* Links */
+a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Lists */
+ul, ol {
+    margin-bottom: 16px;
+    padding-left: 2em;
+}
+
+li {
+    margin-bottom: 4px;
+}
+
+/* Blockquotes (GitHub-style) */
+blockquote {
+    border-left: 4px solid #d0d7de;
+    padding: 0.5em 1em;
+    color: #57606a;
+    background-color: #f6f8fa;
+    margin: 1em 0;
+    font-style: italic;
+}
+
+/* Horizontal Rule (HR) */
+hr {
+    border: 0;
+    height: 1px;
+    background: #d0d7de;
+    margin: 24px 0;
+}
+
+/* ===== GitHub-Style Tables (Ultra-Thin Borders & Centered Headers) ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    background-color: #ffffff;
+}
+
+/* Table Cell Borders - Thinnest Possible */
+th, td {
+    border: 0.2px solid #d0d7de; /* Ultra-thin borders */
+    padding: 6px 10px; /* Keep padding clean */
+    text-align: left;
+}
+
+/* Centering Table Headers */
+th {
+    background-color: #f6f8fa;
+    font-weight: 600;
+    border-bottom: 0.5px solid #d0d7de; /* Slightly thicker for structure */
+    text-align: center; /* Center headers */
+}
+
+
+tr:nth-child(odd) {
+    background-color: #f6f8fa;
+}
+
+tr:hover {
+    background-color: #eef2f6;
+}
+
+
+/* ===== GitHub-Style Code Blocks ===== */
+pre {
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    padding: 10px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 13px;
+}
+
+code {
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    background-color: rgba(27, 31, 35, 0.05);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* GitHub-Style Inline Code */
+p code {
+    font-size: 85%;
+    color: #57606a;
+}
+
+/* ===== GitHub-Style Callouts (Info, Warning, Note, Tip) ===== */
+.callout {
+    border-left: 5px solid;
+    padding: 10px;
+    margin: 1em 0;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.callout::before {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Callout Types */
+.callout-note {
+    border-color: #0366d6;
+    background: #f1f8ff;
+    color: #0366d6;
+}
+
+.callout-note::before {
+    content: "ℹ️ NOTE";
+}
+
+.callout-tip {
+    border-color: #28a745;
+    background: #e6ffed;
+    color: #28a745;
+}
+
+.callout-tip::before {
+    content: "💡 TIP";
+}
+
+.callout-warning {
+    border-color: #d73a49;
+    background: #ffeef0;
+    color: #d73a49;
+}
+
+.callout-warning::before {
+    content: "⚠️ WARNING";
+}
+
+.callout-info {
+    border-color: #d1d5da;
+    background: #f6f8fa;
+    color: #6a737d;
+}
+
+.callout-info::before {
+    content: "🔍 INFO";
+}
+
+/* ===== Page Breaks for PDF Export ===== */
+.break-before {
+    break-before: page;
+}
+
+.break-after {
+    break-after: page;
+}
+
+.avoid-break {
+    break-inside: avoid;
+}
+
+table, pre, img {
+    break-inside: avoid;
+}
+
+/* ===== FOOTNOTES WORKAROUND ===== */
+sup {
+    font-size: 0.75em;
+    vertical-align: super;
+    color: #0366d6;
+}
+
+.footnotes {
+    font-size: 0.85em;
+    color: #6a737d;
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #dfe2e5;
+}
+
+.footnotes ol {
+    padding-left: 1.5em;
+}
+
+.footnotes, .footnotes ol, .footnotes li {
+    break-inside: avoid;
+}
+
+/* ===== HEADER/FOOTER SPACING FIX ===== */
+@page {
+    size: A4;
+    margin-top: 1.2in;
+    margin-bottom: 1in;
+}
